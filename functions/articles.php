@@ -5,7 +5,7 @@ require_once "helpers.php";
 
 function createArticle($title,$body,$user_id,$category_id,$status,$image)
 {
-    $new_image = uploadImage($image);
+    $new_image = uploadImage($image,'articles');
     $sql = "INSERT INTO articles SET title=?, body=?,user_id=? , category_id=?,status=?,image=?, created_at=now()";
      global $conn;
     $stmt = $conn->prepare($sql);
@@ -28,11 +28,18 @@ function getAllArticles(){
     return  $stmt->fetchAll();
 }
 
+function getLastArticles(){
+    $sql = "SELECT * FROM articles ORDER BY created_at DESC LIMIT 4";
+    global $conn;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return  $stmt->fetchAll();
+}
+
 function updateArticle($id,$title,$body,$category_id,$status,$image){
     $article = getArticleById($id);
     if(isset($image) && !empty($image['name'])){
-        uploadImage($image);
-        $image= $image['name'];
+        $image= uploadImage($image,'articles');
     }else{
         $image= $article->image;
     }

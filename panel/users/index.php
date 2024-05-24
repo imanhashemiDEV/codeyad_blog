@@ -41,7 +41,7 @@ $users = getAllUsers();
                         <td class="text-center align-middle"><?php echo $i++ ?></td>
                         <td class="text-center align-middle">
                             <figure class="avatar avatar">
-                                <img src="<?php echo asset('images/'. $user->image) ?>" class="rounded-circle" alt="image">
+                                <img src="<?php echo asset('images/users/'. $user->image) ?>" class="rounded-circle" alt="image">
                             </figure>
                         </td>
                         <td class="text-center align-middle"><?php echo $user->name ?></td>

@@ -10,7 +10,8 @@ function url($url){
     return BASE_URL . $url;
 }
 
-function uploadImage($image){
-    move_uploaded_file($image['tmp_name'],__DIR__.'/../images/'.$image['name']);
-   return $image['name'];
+function uploadImage($image,$table){
+    $name = time().$image['name'];
+    move_uploaded_file($image['tmp_name'],__DIR__."/../images/$table/".$name);
+   return $name;
 }

@@ -51,8 +51,7 @@ function updateUser($id,$name,$password,$image){
         $password = $user->password;
     }
     if(isset($image) && !empty($image['name'])){
-        uploadImage($image);
-        $image= $image['name'];
+        $image= uploadImage($image,'users');
     }else{
         $image= $user->image;
     }

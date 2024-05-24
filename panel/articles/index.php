@@ -45,7 +45,7 @@ $articles = getAllArticles();
                         <td class="text-center align-middle"><?php echo $i++ ?></td>
                         <td class="text-center align-middle">
                             <figure class="avatar avatar">
-                                <img src="<?php echo asset('images/'. $article->image) ?>" class="rounded-circle" alt="image">
+                                <img src="<?php echo asset('images/articles/'. $article->image) ?>" class="rounded-circle" alt="image">
                             </figure>
                         </td>
                         <td class="text-center align-middle"><?php echo $article->title ?></td>
