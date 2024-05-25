@@ -26,7 +26,7 @@ $lastArticles = getLastArticles();
             <li>
                 <div class="d-flex flex-row">
                     <a href="<?php echo 'blog_details.php?id='.$lastArticle->id ?>">
-                        <img src="<?php echo asset('images/articles/'). $lastArticle->image ?>" />
+                        <img src="<?php echo asset('images/articles/'). $lastArticle->image ?>"  alt=""/>
                     </a>
                     <div class="m-2">
                         <p><a href="<?php echo 'blog_details.php?id='.$lastArticle->id ?>">
