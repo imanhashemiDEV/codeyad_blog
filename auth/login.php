@@ -13,12 +13,16 @@ if(isset($_POST['submit'])){
         isset($_POST['email']) && !empty($_POST['email'])
         && isset($_POST['password']) && !empty($_POST['password'])
     ){
-        $user = checkUser($_POST['email']);
-        if($user && password_verify($_POST['password'],$user->password)){
-            $_SESSION['user'] = $user->email;
-            header('location: ../panel/index.php');
+        if(preg_match('/^([\w\-\._]+)@([\w\.]+)/', $_POST['email'])){
+            $user = checkUser($_POST['email']);
+            if($user && password_verify($_POST['password'],$user->password)){
+                $_SESSION['user'] = $user->email;
+                header('location: ../panel/index.php');
+            }else{
+                $error = "اطلاعات وارد شده صحیح نیست";
+            }
         }else{
-            $error = "اطلاعات وارد شده صحیح نیست";
+            $error = "اطلاعات ایمیل را با فرمت صحیح وارد کنید";
         }
     }else{
         $error = "لطفا تمام فیلد ها را تکمیل کنید";
