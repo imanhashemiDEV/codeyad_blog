@@ -4,6 +4,8 @@ require_once 'functions/articles.php';
 require_once 'functions/categories.php';
 
 $articles = getAllArticles();
+
+//sendEmail();
 ?>
 
 <html dir="rtl" lang="fa-IR">
