@@ -1,11 +1,10 @@
 <?php
+//require_once "../libraries/PHPMailer/src/PHPMailer.php";
+//require_once "../libraries/PHPMailer/src/SMTP.php";
+//use PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\SMTP;
 
-require_once "libraries/PHPMailer/src/PHPMailer.php";
-require_once "libraries/PHPMailer/src/SMTP.php";
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-
-const BASE_URL = "http://localhost/codeyad%20blog/";
+const BASE_URL = "http://localhost/codeyad-blog/";
 
 function asset($file){
     return BASE_URL . $file;
